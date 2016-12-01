@@ -1,0 +1,773 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C6ECCE639E74896E214B490 /* Pods_HyCube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048EB440285B20E5CCE0261F /* Pods_HyCube.framework */; };
+		2759AC1F1DEFE22C001FD890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759AC1E1DEFE22C001FD890 /* AppDelegate.swift */; };
+		2759AC211DEFE22C001FD890 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759AC201DEFE22C001FD890 /* FirstViewController.swift */; };
+		2759AC231DEFE22C001FD890 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759AC221DEFE22C001FD890 /* SecondViewController.swift */; };
+		2759AC261DEFE22C001FD890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2759AC241DEFE22C001FD890 /* Main.storyboard */; };
+		2759AC2B1DEFE22C001FD890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2759AC291DEFE22C001FD890 /* LaunchScreen.storyboard */; };
+		2759AC361DEFE22C001FD890 /* HyCubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759AC351DEFE22C001FD890 /* HyCubeTests.swift */; };
+		2759AC411DEFE22C001FD890 /* HyCubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759AC401DEFE22C001FD890 /* HyCubeUITests.swift */; };
+		277CAF261DEFF90A006C21C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277CAF251DEFF90A006C21C4 /* Assets.xcassets */; };
+		27B789431DEFE37500D337E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B789421DEFE37500D337E4 /* LoginViewController.swift */; };
+		27B789471DEFEB8C00D337E4 /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B789461DEFEB8C00D337E4 /* BorderedButton.swift */; };
+		27B789491DEFEF6800D337E4 /* ColoredUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B789481DEFEF6800D337E4 /* ColoredUIImage.swift */; };
+		27B7894B1DEFF0FA00D337E4 /* imageColorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7894A1DEFF0FA00D337E4 /* imageColorFilter.swift */; };
+		27B7894D1DEFF41900D337E4 /* UIColorByHexRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7894C1DEFF41900D337E4 /* UIColorByHexRGB.swift */; };
+		71D8B2517F28ED468998D157 /* Pods_HyCubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B067955002AD0BAA1FF631 /* Pods_HyCubeUITests.framework */; };
+		D005D87219ECFD58E594ABD2 /* Pods_HyCubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48B4A7AC1EE1DE5C014D401 /* Pods_HyCubeTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2759AC321DEFE22C001FD890 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2759AC131DEFE22C001FD890 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2759AC1A1DEFE22C001FD890;
+			remoteInfo = HyCube;
+		};
+		2759AC3D1DEFE22C001FD890 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2759AC131DEFE22C001FD890 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2759AC1A1DEFE22C001FD890;
+			remoteInfo = HyCube;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		048EB440285B20E5CCE0261F /* Pods_HyCube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyCube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20DE687B0528878FB315C9FC /* Pods-HyCube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HyCube/Pods-HyCube.debug.xcconfig"; sourceTree = "<group>"; };
+		21D9859AAFCF164378B60F36 /* Pods-HyCubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCubeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HyCubeTests/Pods-HyCubeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2759AC1B1DEFE22C001FD890 /* HyCube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyCube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2759AC1E1DEFE22C001FD890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2759AC201DEFE22C001FD890 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		2759AC221DEFE22C001FD890 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		2759AC251DEFE22C001FD890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2759AC2A1DEFE22C001FD890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2759AC2C1DEFE22C001FD890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2759AC311DEFE22C001FD890 /* HyCubeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyCubeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2759AC351DEFE22C001FD890 /* HyCubeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyCubeTests.swift; sourceTree = "<group>"; };
+		2759AC371DEFE22C001FD890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2759AC3C1DEFE22C001FD890 /* HyCubeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyCubeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2759AC401DEFE22C001FD890 /* HyCubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyCubeUITests.swift; sourceTree = "<group>"; };
+		2759AC421DEFE22C001FD890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		277CAF251DEFF90A006C21C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27B789421DEFE37500D337E4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		27B789461DEFEB8C00D337E4 /* BorderedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		27B789481DEFEF6800D337E4 /* ColoredUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredUIImage.swift; sourceTree = "<group>"; };
+		27B7894A1DEFF0FA00D337E4 /* imageColorFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageColorFilter.swift; sourceTree = "<group>"; };
+		27B7894C1DEFF41900D337E4 /* UIColorByHexRGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorByHexRGB.swift; sourceTree = "<group>"; };
+		42B067955002AD0BAA1FF631 /* Pods_HyCubeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyCubeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BC647B3AEE68A14AA0B64AB /* Pods-HyCubeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCubeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyCubeTests/Pods-HyCubeTests.release.xcconfig"; sourceTree = "<group>"; };
+		85C7B522ED49188B40E6FCFF /* Pods-HyCube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCube.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyCube/Pods-HyCube.release.xcconfig"; sourceTree = "<group>"; };
+		BB27D2DE4F450DE11EFD4BEC /* Pods-HyCubeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCubeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyCubeUITests/Pods-HyCubeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D6975DEB98B5BB06EF31FAEB /* Pods-HyCubeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCubeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HyCubeUITests/Pods-HyCubeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E48B4A7AC1EE1DE5C014D401 /* Pods_HyCubeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyCubeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2759AC181DEFE22C001FD890 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C6ECCE639E74896E214B490 /* Pods_HyCube.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2759AC2E1DEFE22C001FD890 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D005D87219ECFD58E594ABD2 /* Pods_HyCubeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2759AC391DEFE22C001FD890 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71D8B2517F28ED468998D157 /* Pods_HyCubeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2759AC121DEFE22C001FD890 = {
+			isa = PBXGroup;
+			children = (
+				2759AC1D1DEFE22C001FD890 /* HyCube */,
+				2759AC341DEFE22C001FD890 /* HyCubeTests */,
+				2759AC3F1DEFE22C001FD890 /* HyCubeUITests */,
+				2759AC1C1DEFE22C001FD890 /* Products */,
+				714D231192AB124464ED45AC /* Pods */,
+				4596E1542C403F7873859E4F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2759AC1C1DEFE22C001FD890 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2759AC1B1DEFE22C001FD890 /* HyCube.app */,
+				2759AC311DEFE22C001FD890 /* HyCubeTests.xctest */,
+				2759AC3C1DEFE22C001FD890 /* HyCubeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2759AC1D1DEFE22C001FD890 /* HyCube */ = {
+			isa = PBXGroup;
+			children = (
+				27B789451DEFEB6700D337E4 /* Objects */,
+				27B789441DEFEB4000D337E4 /* Extensions */,
+				2759AC1E1DEFE22C001FD890 /* AppDelegate.swift */,
+				2759AC201DEFE22C001FD890 /* FirstViewController.swift */,
+				2759AC221DEFE22C001FD890 /* SecondViewController.swift */,
+				2759AC241DEFE22C001FD890 /* Main.storyboard */,
+				277CAF251DEFF90A006C21C4 /* Assets.xcassets */,
+				2759AC291DEFE22C001FD890 /* LaunchScreen.storyboard */,
+				2759AC2C1DEFE22C001FD890 /* Info.plist */,
+				27B789421DEFE37500D337E4 /* LoginViewController.swift */,
+			);
+			path = HyCube;
+			sourceTree = "<group>";
+		};
+		2759AC341DEFE22C001FD890 /* HyCubeTests */ = {
+			isa = PBXGroup;
+			children = (
+				2759AC351DEFE22C001FD890 /* HyCubeTests.swift */,
+				2759AC371DEFE22C001FD890 /* Info.plist */,
+			);
+			path = HyCubeTests;
+			sourceTree = "<group>";
+		};
+		2759AC3F1DEFE22C001FD890 /* HyCubeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2759AC401DEFE22C001FD890 /* HyCubeUITests.swift */,
+				2759AC421DEFE22C001FD890 /* Info.plist */,
+			);
+			path = HyCubeUITests;
+			sourceTree = "<group>";
+		};
+		27B789441DEFEB4000D337E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				27B789481DEFEF6800D337E4 /* ColoredUIImage.swift */,
+				27B7894A1DEFF0FA00D337E4 /* imageColorFilter.swift */,
+				27B7894C1DEFF41900D337E4 /* UIColorByHexRGB.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		27B789451DEFEB6700D337E4 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				27B789461DEFEB8C00D337E4 /* BorderedButton.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		4596E1542C403F7873859E4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				048EB440285B20E5CCE0261F /* Pods_HyCube.framework */,
+				E48B4A7AC1EE1DE5C014D401 /* Pods_HyCubeTests.framework */,
+				42B067955002AD0BAA1FF631 /* Pods_HyCubeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		714D231192AB124464ED45AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20DE687B0528878FB315C9FC /* Pods-HyCube.debug.xcconfig */,
+				85C7B522ED49188B40E6FCFF /* Pods-HyCube.release.xcconfig */,
+				21D9859AAFCF164378B60F36 /* Pods-HyCubeTests.debug.xcconfig */,
+				4BC647B3AEE68A14AA0B64AB /* Pods-HyCubeTests.release.xcconfig */,
+				D6975DEB98B5BB06EF31FAEB /* Pods-HyCubeUITests.debug.xcconfig */,
+				BB27D2DE4F450DE11EFD4BEC /* Pods-HyCubeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2759AC1A1DEFE22C001FD890 /* HyCube */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2759AC451DEFE22C001FD890 /* Build configuration list for PBXNativeTarget "HyCube" */;
+			buildPhases = (
+				1F4A12384A47B417493FE5A8 /* [CP] Check Pods Manifest.lock */,
+				2759AC171DEFE22C001FD890 /* Sources */,
+				2759AC181DEFE22C001FD890 /* Frameworks */,
+				2759AC191DEFE22C001FD890 /* Resources */,
+				E1237DDCB17D1D46CBBDC3E7 /* [CP] Embed Pods Frameworks */,
+				665D2EB255DD5958D8AB1841 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HyCube;
+			productName = HyCube;
+			productReference = 2759AC1B1DEFE22C001FD890 /* HyCube.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2759AC301DEFE22C001FD890 /* HyCubeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2759AC481DEFE22C001FD890 /* Build configuration list for PBXNativeTarget "HyCubeTests" */;
+			buildPhases = (
+				4D16301EC1D2247F920A4683 /* [CP] Check Pods Manifest.lock */,
+				2759AC2D1DEFE22C001FD890 /* Sources */,
+				2759AC2E1DEFE22C001FD890 /* Frameworks */,
+				2759AC2F1DEFE22C001FD890 /* Resources */,
+				341B9A3EA8E828631EDE402E /* [CP] Embed Pods Frameworks */,
+				F01C64684AAB15D88E9DB1DA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2759AC331DEFE22C001FD890 /* PBXTargetDependency */,
+			);
+			name = HyCubeTests;
+			productName = HyCubeTests;
+			productReference = 2759AC311DEFE22C001FD890 /* HyCubeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2759AC3B1DEFE22C001FD890 /* HyCubeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2759AC4B1DEFE22C001FD890 /* Build configuration list for PBXNativeTarget "HyCubeUITests" */;
+			buildPhases = (
+				FA075EDC1A5A72D589D4B19A /* [CP] Check Pods Manifest.lock */,
+				2759AC381DEFE22C001FD890 /* Sources */,
+				2759AC391DEFE22C001FD890 /* Frameworks */,
+				2759AC3A1DEFE22C001FD890 /* Resources */,
+				713967D95DAC1ABC76719CCB /* [CP] Embed Pods Frameworks */,
+				DE98E3C13497AC0E9E7387A5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2759AC3E1DEFE22C001FD890 /* PBXTargetDependency */,
+			);
+			name = HyCubeUITests;
+			productName = HyCubeUITests;
+			productReference = 2759AC3C1DEFE22C001FD890 /* HyCubeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2759AC131DEFE22C001FD890 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = hycube.com;
+				TargetAttributes = {
+					2759AC1A1DEFE22C001FD890 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = Y8SQE6629N;
+						ProvisioningStyle = Automatic;
+					};
+					2759AC301DEFE22C001FD890 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = Y8SQE6629N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2759AC1A1DEFE22C001FD890;
+					};
+					2759AC3B1DEFE22C001FD890 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = Y8SQE6629N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2759AC1A1DEFE22C001FD890;
+					};
+				};
+			};
+			buildConfigurationList = 2759AC161DEFE22C001FD890 /* Build configuration list for PBXProject "HyCube" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2759AC121DEFE22C001FD890;
+			productRefGroup = 2759AC1C1DEFE22C001FD890 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2759AC1A1DEFE22C001FD890 /* HyCube */,
+				2759AC301DEFE22C001FD890 /* HyCubeTests */,
+				2759AC3B1DEFE22C001FD890 /* HyCubeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2759AC191DEFE22C001FD890 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2759AC2B1DEFE22C001FD890 /* LaunchScreen.storyboard in Resources */,
+				277CAF261DEFF90A006C21C4 /* Assets.xcassets in Resources */,
+				2759AC261DEFE22C001FD890 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2759AC2F1DEFE22C001FD890 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2759AC3A1DEFE22C001FD890 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F4A12384A47B417493FE5A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		341B9A3EA8E828631EDE402E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HyCubeTests/Pods-HyCubeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D16301EC1D2247F920A4683 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		665D2EB255DD5958D8AB1841 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HyCube/Pods-HyCube-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		713967D95DAC1ABC76719CCB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HyCubeUITests/Pods-HyCubeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE98E3C13497AC0E9E7387A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HyCubeUITests/Pods-HyCubeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1237DDCB17D1D46CBBDC3E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HyCube/Pods-HyCube-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F01C64684AAB15D88E9DB1DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HyCubeTests/Pods-HyCubeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA075EDC1A5A72D589D4B19A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2759AC171DEFE22C001FD890 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B789471DEFEB8C00D337E4 /* BorderedButton.swift in Sources */,
+				27B789491DEFEF6800D337E4 /* ColoredUIImage.swift in Sources */,
+				27B7894B1DEFF0FA00D337E4 /* imageColorFilter.swift in Sources */,
+				27B789431DEFE37500D337E4 /* LoginViewController.swift in Sources */,
+				2759AC231DEFE22C001FD890 /* SecondViewController.swift in Sources */,
+				27B7894D1DEFF41900D337E4 /* UIColorByHexRGB.swift in Sources */,
+				2759AC1F1DEFE22C001FD890 /* AppDelegate.swift in Sources */,
+				2759AC211DEFE22C001FD890 /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2759AC2D1DEFE22C001FD890 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2759AC361DEFE22C001FD890 /* HyCubeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2759AC381DEFE22C001FD890 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2759AC411DEFE22C001FD890 /* HyCubeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2759AC331DEFE22C001FD890 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2759AC1A1DEFE22C001FD890 /* HyCube */;
+			targetProxy = 2759AC321DEFE22C001FD890 /* PBXContainerItemProxy */;
+		};
+		2759AC3E1DEFE22C001FD890 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2759AC1A1DEFE22C001FD890 /* HyCube */;
+			targetProxy = 2759AC3D1DEFE22C001FD890 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2759AC241DEFE22C001FD890 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2759AC251DEFE22C001FD890 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2759AC291DEFE22C001FD890 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2759AC2A1DEFE22C001FD890 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2759AC431DEFE22C001FD890 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2759AC441DEFE22C001FD890 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2759AC461DEFE22C001FD890 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20DE687B0528878FB315C9FC /* Pods-HyCube.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y8SQE6629N;
+				INFOPLIST_FILE = HyCube/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hycube.com.HyCube;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2759AC471DEFE22C001FD890 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85C7B522ED49188B40E6FCFF /* Pods-HyCube.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y8SQE6629N;
+				INFOPLIST_FILE = HyCube/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hycube.com.HyCube;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2759AC491DEFE22C001FD890 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21D9859AAFCF164378B60F36 /* Pods-HyCubeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Y8SQE6629N;
+				INFOPLIST_FILE = HyCubeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hycube.com.HyCubeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyCube.app/HyCube";
+			};
+			name = Debug;
+		};
+		2759AC4A1DEFE22C001FD890 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BC647B3AEE68A14AA0B64AB /* Pods-HyCubeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Y8SQE6629N;
+				INFOPLIST_FILE = HyCubeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hycube.com.HyCubeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HyCube.app/HyCube";
+			};
+			name = Release;
+		};
+		2759AC4C1DEFE22C001FD890 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6975DEB98B5BB06EF31FAEB /* Pods-HyCubeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = Y8SQE6629N;
+				INFOPLIST_FILE = HyCubeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hycube.com.HyCubeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HyCube;
+			};
+			name = Debug;
+		};
+		2759AC4D1DEFE22C001FD890 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB27D2DE4F450DE11EFD4BEC /* Pods-HyCubeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = Y8SQE6629N;
+				INFOPLIST_FILE = HyCubeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hycube.com.HyCubeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = HyCube;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2759AC161DEFE22C001FD890 /* Build configuration list for PBXProject "HyCube" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2759AC431DEFE22C001FD890 /* Debug */,
+				2759AC441DEFE22C001FD890 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2759AC451DEFE22C001FD890 /* Build configuration list for PBXNativeTarget "HyCube" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2759AC461DEFE22C001FD890 /* Debug */,
+				2759AC471DEFE22C001FD890 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2759AC481DEFE22C001FD890 /* Build configuration list for PBXNativeTarget "HyCubeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2759AC491DEFE22C001FD890 /* Debug */,
+				2759AC4A1DEFE22C001FD890 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2759AC4B1DEFE22C001FD890 /* Build configuration list for PBXNativeTarget "HyCubeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2759AC4C1DEFE22C001FD890 /* Debug */,
+				2759AC4D1DEFE22C001FD890 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2759AC131DEFE22C001FD890 /* Project object */;
+}
