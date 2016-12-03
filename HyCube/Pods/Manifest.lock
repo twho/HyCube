@@ -1,4 +1,13 @@
 PODS:
+  - AsyncDisplayKit (1.9.92):
+    - AsyncDisplayKit/PINRemoteImage (= 1.9.92)
+  - AsyncDisplayKit/ASDealloc2MainObject (1.9.92)
+  - AsyncDisplayKit/Core (1.9.92):
+    - AsyncDisplayKit/ASDealloc2MainObject
+  - AsyncDisplayKit/PINRemoteImage (1.9.92):
+    - AsyncDisplayKit/Core
+    - PINCache (= 3.0.1-beta)
+    - PINRemoteImage/iOS (= 3.0.0-beta.3)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -18,27 +27,53 @@ PODS:
     - FacebookCore (~> 0.2)
     - FBSDKCoreKit (~> 4.15)
     - FBSDKShareKit (~> 4.15)
-  - FBSDKCoreKit (4.17.0):
+  - FBSDKCoreKit (4.18.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.17.0):
+  - FBSDKLoginKit (4.18.0):
     - FBSDKCoreKit
-  - FBSDKShareKit (4.17.0):
+  - FBSDKShareKit (4.18.0):
     - FBSDKCoreKit
+  - FLAnimatedImage (1.0.12)
+  - NMessenger (1.0.79):
+    - AsyncDisplayKit (= 1.9.92)
+  - PINCache (3.0.1-beta)
+  - PINRemoteImage (3.0.0-beta.3):
+    - PINRemoteImage/FLAnimatedImage (= 3.0.0-beta.3)
+  - PINRemoteImage/Core (3.0.0-beta.3):
+    - PINCache (>= 3.0.0-beta)
+  - PINRemoteImage/FLAnimatedImage (3.0.0-beta.3):
+    - FLAnimatedImage (>= 1.0)
+    - PINRemoteImage/Core
+  - PINRemoteImage/iOS (3.0.0-beta.3):
+    - PINRemoteImage/Core
+  - PubNub (4.5.9):
+    - PubNub/Core (= 4.5.9)
+  - PubNub/Core (4.5.9)
 
 DEPENDENCIES:
+  - AsyncDisplayKit
   - FacebookCore
   - FacebookLogin
   - FacebookShare
+  - NMessenger
+  - PINRemoteImage
+  - PubNub
 
 SPEC CHECKSUMS:
+  AsyncDisplayKit: 49d94f5739669d666ff7cdc3430f43f0b2cfbeaf
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
-  FBSDKCoreKit: 30a21d2d7b92984b3d80497113433c00824c35e9
-  FBSDKLoginKit: 42b7129ac0373ca99eaf4cbebf4d07bd42371f59
-  FBSDKShareKit: 9b573d03fbee36cbaf42d5bb1f2bc019e0d72347
+  FBSDKCoreKit: 15fef8804a4629f98c6f4e55e81a76c9d725d85e
+  FBSDKLoginKit: 6773073e970b2b15fb12e451ce7f11da0532b880
+  FBSDKShareKit: 0b8d6cc3f103c75297eb3c62caec284a2ccf1b9e
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  NMessenger: 79b8a4d2132fe49e03ec8964d07955d6553f831c
+  PINCache: 6911fe422a633e18b3d3ddf2bd4f0e55e36e2892
+  PINRemoteImage: 308731aa6534500e58fc211b9cc2bb7252df25ba
+  PubNub: fbcd3f98bced45b7d61de79cf3cd6822ee8c1858
 
-PODFILE CHECKSUM: 87260ab0fb8f6a027f8e8e6d5b6c8f5c88fa0e8d
+PODFILE CHECKSUM: 78c3dea8ba8cacbc12e26ce910ef11b2b282fb5c
 
 COCOAPODS: 1.1.1
