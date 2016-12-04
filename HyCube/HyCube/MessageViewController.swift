@@ -16,6 +16,26 @@ import PubNub
 class MessageViewController: UIViewController {
     @IBOutlet weak var btnStartChatting: BorderedButton!
     
+    struct MyProfile {
+        static let myId = "myId"
+        static let myName = "myName"
+        static let myEmail = "myEmail"
+        static let myPic = "myPic"
+        static let myFriendsName = "myFriendsName"
+        static let myFriendsId = "myFriendsId"
+    }
+    
+    @IBOutlet weak var progressSpinner: UIActivityIndicatorView!
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var progressText: UILabel!
+    @IBOutlet weak var btnStart: BorderedButton!
+    
+    var allUserIds: [String] = []
+    var allUserNames: [String] = []
+    var time: Float = 0.0
+    var timer = Timer()
+    
+    let defaults = UserDefaults.standard
     let imgEnterClicked = (UIImage(named: "ic_enter")?.maskWithColor(color: UIColor.white)!)! as UIImage
     let imgEnter = UIImage(named: "ic_enter")
     
@@ -24,6 +44,7 @@ class MessageViewController: UIViewController {
         
         btnStartChatting.setImage(imgEnterClicked, for: .highlighted)
         btnStartChatting.setImage(imgEnter, for: .normal)
+        loadAllUserImg()
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,5 +55,37 @@ class MessageViewController: UIViewController {
     @IBAction func btnStartPressed(_ sender: BorderedButton) {
         let exampleViewController = MessengerViewController()
         navigationController?.pushViewController(exampleViewController, animated: true)
+    }
+    
+    func setProgress() {
+        let runtime = Float(allUserIds.count)
+        progressBar.progress = (time / runtime)
+        if time >= runtime {
+            self.progressSpinner.isHidden = true
+            self.progressBar.isHidden = true
+            self.progressText.isHidden = true
+            UIView.animate(withDuration: 1.5, animations: {
+                self.btnStart.alpha = 1.0
+            })
+        }
+    }
+    
+    func loadAllUserImg(){
+        allUserIds = defaults.array(forKey: MyProfile.myFriendsId) as! [String]
+        allUserNames = defaults.array(forKey: MyProfile.myFriendsName) as! [String]
+        self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(LoginViewController.setProgress), userInfo: nil, repeats: true)
+        var count = 0
+        for userId in allUserIds {
+            time += 1
+//            if nil == image {
+                print(allUserNames[count])
+                let facebookProfileUrl = URL(string: "http://graph.facebook.com/\(userId)/picture?type=large")
+                if let data = NSData(contentsOf: facebookProfileUrl!) {
+                    self.defaults.setValue(data as Data, forKey: allUserNames[count])
+                    self.defaults.synchronize()
+                }
+//            }
+            count = count + 1
+        }
     }
 }

@@ -100,10 +100,10 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
             taskListItems.append(TaskItem(uuid: (message.data.message as! [String:AnyObject])["uuid"] as! String, task: (message.data.message as! [String:AnyObject])["taskItem"] as! String))
             tableView.reloadData()
         } else {
-            activityIndicator.stopAnimating()
-            taskListItems.remove(at: (message.data.message as! [String:AnyObject])["index"] as! Int)
-            let indexPath = IndexPath.init(row: (message.data.message as! [String:AnyObject])["index"] as! Int, section: 0)
-            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+//            activityIndicator.stopAnimating()
+//            taskListItems.remove(at: (message.data.message as! [String:AnyObject])["index"] as! Int)
+//            let indexPath = IndexPath.init(row: (message.data.message as! [String:AnyObject])["index"] as! Int, section: 0)
+//            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
         }
     }
     

@@ -15,13 +15,23 @@ import PubNub
 
 class MessengerViewController: NMessengerViewController, PNObjectEventListener {
     
+    struct MyProfile {
+        static let myId = "myId"
+        static let myName = "myName"
+        static let myEmail = "myEmail"
+        static let myPic = "myPic"
+        static let myFriendsName = "myFriendsName"
+        static let myFriendsId = "myFriendsId"
+    }
+    
     let segmentedControlPadding:CGFloat = 10
     let segmentedControlHeight: CGFloat = 30
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let defaults = UserDefaults.standard
     
     private(set) var lastMessageGroup:MessageGroup? = nil
     var myName: String = ""
-    let defaults = UserDefaults.standard
+    var chatChannelName: String = "HyCubeChat"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +39,14 @@ class MessengerViewController: NMessengerViewController, PNObjectEventListener {
         navigationItem.title = "Forum"
         navigationItem.hidesBackButton = true
         appDelegate.client.addListener(self)
-        appDelegate.client.subscribeToChannels(["HyCubeChat"], withPresence: false)
+        appDelegate.client.subscribeToChannels([chatChannelName], withPresence: false)
         self.hideKeyboardWhenTappedAround()
         automaticallyAdjustsScrollViewInsets = false
     }
     
     override func sendText(_ text: String, isIncomingMessage: Bool) -> GeneralMessengerCell {
-        let sendText = "\(myName)HYCUBEISAWSOME\(text)"
-        appDelegate.client.publish(sendText, toChannel: "HyCubeChat", compressed: false, withCompletion: { (status) in
+        let sendText = "\(myName)HYCUBEISAWESOME\(text)"
+        appDelegate.client.publish(sendText, toChannel: chatChannelName, compressed: false, withCompletion: { (status) in
             if !status.isError {
                 
             } else {
@@ -48,7 +58,7 @@ class MessengerViewController: NMessengerViewController, PNObjectEventListener {
         let newMessage = MessageNode(content: textContent)
         newMessage.cellPadding = messagePadding
         newMessage.currentViewController = self
-        self.postText(newMessage, isIncomingMessage: false)
+        self.postText(newMessage, userName: myName, isIncomingMessage: false)
         
         return newMessage
     }
@@ -59,13 +69,13 @@ class MessengerViewController: NMessengerViewController, PNObjectEventListener {
      - parameter message: The message to add
      - parameter isIncomingMessage: If the message is incoming or outgoing.
      */
-    private func postText(_ message: MessageNode, isIncomingMessage: Bool) {
+    private func postText(_ message: MessageNode, userName: String, isIncomingMessage: Bool) {
         if self.lastMessageGroup == nil || self.lastMessageGroup?.isIncomingMessage == !isIncomingMessage {
             self.lastMessageGroup = self.createMessageGroup()
             
             //add avatar if incoming message
             if isIncomingMessage {
-                self.lastMessageGroup?.avatarNode = self.createAvatar()
+                self.lastMessageGroup?.avatarNode = self.createAvatar(userName: userName)
             }
             
             self.lastMessageGroup!.isIncomingMessage = isIncomingMessage
@@ -92,11 +102,15 @@ class MessengerViewController: NMessengerViewController, PNObjectEventListener {
      Creates mock avatar with an AsyncDisplaykit *ASImageNode*.
      - returns: ASImageNode
      */
-    private func createAvatar()->ASImageNode {
+    private func createAvatar(userName: String)->ASImageNode {
         let avatar = ASImageNode()
+        if(nil != defaults.data(forKey: userName)){
+            avatar.image = UIImage(data: defaults.data(forKey: userName)! as Data)
+        }
         avatar.backgroundColor = UIColor.lightGray
-        avatar.preferredFrameSize = CGSize(width: 20, height: 20)
-        avatar.layer.cornerRadius = 10
+        avatar.preferredFrameSize = CGSize(width: 45, height: 45)
+        avatar.layer.cornerRadius = 22.5
+        avatar.clipsToBounds = true
         return avatar
     }
     
@@ -107,14 +121,17 @@ class MessengerViewController: NMessengerViewController, PNObjectEventListener {
         else {
             // Message has been received on channel stored in message.data.channel.
         }
-        let messageArr = (message.data.message as! String).components(separatedBy: "HYCUBEISAWSOME")
-        if("HyCubeChat" == "\(message.data.channel)" && messageArr[0] != "\(myName)"){
-            let textContent = TextContentNode(textMessageString: messageArr[1], currentViewController: self, bubbleConfiguration: self.sharedBubbleConfiguration)
-            let newMessage = MessageNode(content: textContent)
-            //            newMessage.headerNode = newMessage
-            newMessage.cellPadding = messagePadding
-            newMessage.currentViewController = self
-            self.postText(newMessage, isIncomingMessage: true)
+        
+        if(chatChannelName == "\(message.data.channel)"){
+            let messageArr = "\(message.data.message as! String)".components(separatedBy: "HYCUBEISAWESOME")
+            if(messageArr[0] != "\(self.myName)"){
+                let textContent = TextContentNode(textMessageString: messageArr[1], currentViewController: self, bubbleConfiguration: self.sharedBubbleConfiguration)
+                let newMessage = MessageNode(content: textContent)
+                newMessage.cellPadding = messagePadding
+                newMessage.currentViewController = self
+                let senderName = messageArr[0]
+                self.postText(newMessage, userName: senderName, isIncomingMessage: true)
+            }
         }
     }
     

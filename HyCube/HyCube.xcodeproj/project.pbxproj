@@ -31,6 +31,7 @@
 		27B7894B1DEFF0FA00D337E4 /* imageColorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7894A1DEFF0FA00D337E4 /* imageColorFilter.swift */; };
 		27B7894D1DEFF41900D337E4 /* UIColorByHexRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7894C1DEFF41900D337E4 /* UIColorByHexRGB.swift */; };
 		27DA49CC1DF1C9EB00C0CBB3 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DA49CB1DF1C9EB00C0CBB3 /* PeopleViewController.swift */; };
+		27EF33F21DF3DB5800C12244 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF33F11DF3DB5800C12244 /* SettingsViewController.swift */; };
 		71D8B2517F28ED468998D157 /* Pods_HyCubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B067955002AD0BAA1FF631 /* Pods_HyCubeUITests.framework */; };
 		D005D87219ECFD58E594ABD2 /* Pods_HyCubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48B4A7AC1EE1DE5C014D401 /* Pods_HyCubeTests.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		27B7894A1DEFF0FA00D337E4 /* imageColorFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageColorFilter.swift; sourceTree = "<group>"; };
 		27B7894C1DEFF41900D337E4 /* UIColorByHexRGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorByHexRGB.swift; sourceTree = "<group>"; };
 		27DA49CB1DF1C9EB00C0CBB3 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		27EF33F11DF3DB5800C12244 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		42B067955002AD0BAA1FF631 /* Pods_HyCubeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyCubeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC647B3AEE68A14AA0B64AB /* Pods-HyCubeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCubeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyCubeTests/Pods-HyCubeTests.release.xcconfig"; sourceTree = "<group>"; };
 		85C7B522ED49188B40E6FCFF /* Pods-HyCube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCube.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyCube/Pods-HyCube.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				27A79BEF1DF0EC6500E4D3AD /* AddTaskViewController.swift */,
 				27DA49CB1DF1C9EB00C0CBB3 /* PeopleViewController.swift */,
 				276F01501DF2853200E5AAA7 /* TaskViewController.swift */,
+				27EF33F11DF3DB5800C12244 /* SettingsViewController.swift */,
 			);
 			path = HyCube;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				276F01511DF2853200E5AAA7 /* TaskViewController.swift in Sources */,
 				27A79BF61DF113BA00E4D3AD /* PopDatePicker.swift in Sources */,
 				2759AC1F1DEFE22C001FD890 /* AppDelegate.swift in Sources */,
+				27EF33F21DF3DB5800C12244 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
