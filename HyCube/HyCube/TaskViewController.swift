@@ -184,9 +184,8 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
     }
     
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
-        
+        //segmented control
     }
-    
     
     //Spinning indicator when loading request
     func showActivityIndicator() {
