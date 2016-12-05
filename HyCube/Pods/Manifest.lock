@@ -14,6 +14,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - DropDown (2)
   - FacebookCore (0.2.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.15)
@@ -52,6 +53,7 @@ PODS:
 
 DEPENDENCIES:
   - AsyncDisplayKit
+  - DropDown
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -62,6 +64,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AsyncDisplayKit: 49d94f5739669d666ff7cdc3430f43f0b2cfbeaf
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FacebookShare: 8e9ee8ea06505e6a1d3d719b0cc63e840fb8aaeb
@@ -74,6 +77,6 @@ SPEC CHECKSUMS:
   PINRemoteImage: 308731aa6534500e58fc211b9cc2bb7252df25ba
   PubNub: fbcd3f98bced45b7d61de79cf3cd6822ee8c1858
 
-PODFILE CHECKSUM: 78c3dea8ba8cacbc12e26ce910ef11b2b282fb5c
+PODFILE CHECKSUM: 72062660ed61b861f37900257faea007f482512f
 
 COCOAPODS: 1.1.1

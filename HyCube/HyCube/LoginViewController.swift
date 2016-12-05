@@ -65,7 +65,6 @@ class LoginViewController: UIViewController, PNObjectEventListener {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        getMyFacebookProfilePic()
         if start {
             serialQueue.async { [unowned self] () -> Void in
                 self.loadAllUsers()
@@ -73,6 +72,7 @@ class LoginViewController: UIViewController, PNObjectEventListener {
         } else {
             start = true
         }
+        getMyFacebookProfilePic()
     }
 
     override func didReceiveMemoryWarning() {

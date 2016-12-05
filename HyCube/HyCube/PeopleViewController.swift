@@ -18,8 +18,13 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var tvUser1: UILabel!
     @IBOutlet weak var tvUser2: UILabel!
     @IBOutlet weak var tvUser3: UILabel!
+    @IBOutlet weak var tvChatInstr: UILabel!
+    @IBOutlet weak var btnChat: BorderedButton!
+    @IBOutlet weak var btnSendReminders: BorderedButton!
     
     let defaults = UserDefaults.standard
+    let imgChatClicked = (UIImage(named: "ic_chat")?.maskWithColor(color: UIColor.white)!)! as UIImage
+    let imgRemindersClicked = (UIImage(named: "ic_reminder")?.maskWithColor(color: UIColor.white)!)! as UIImage
     
     var userIvs: [UIImageView] = []
     var userTvs: [UILabel] = []
@@ -48,11 +53,58 @@ class PeopleViewController: UIViewController {
         self.userIvs = [ivUser1, ivUser2, ivUser3]
         self.userTvs = [tvUser1, tvUser2, tvUser3]
         self.loadAllUserImg()
+        btnChat.setImage(imgChatClicked, for: .highlighted)
+        btnSendReminders.setImage(imgRemindersClicked, for: .highlighted)
+        let tapGestureRecognizer1 = UITapGestureRecognizer(target:self, action:#selector(iv1Tapped))
+        ivUser1.addGestureRecognizer(tapGestureRecognizer1)
+        let tapGestureRecognizer2 = UITapGestureRecognizer(target:self, action:#selector(iv2Tapped))
+        ivUser2.addGestureRecognizer(tapGestureRecognizer2)
+        let tapGestureRecognizer3 = UITapGestureRecognizer(target:self, action:#selector(iv3Tapped))
+        ivUser3.addGestureRecognizer(tapGestureRecognizer3)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func iv1Tapped(){
+        setButton(index: 0)
+    }
+    
+    func iv2Tapped(){
+        setButton(index: 1)
+    }
+    
+    func iv3Tapped(){
+        setButton(index: 2)
+    }
+    
+    func setButton(index: Int) {
+        tvChatInstr.isHidden = true
+        switch index {
+        case 0:
+            btnChat.setTitle("Chat with \(tvUser1.text!)", for: .normal)
+            break
+        case 1:
+            btnChat.setTitle("Chat with \(tvUser2.text!)", for: .normal)
+            break
+        case 2:
+            btnChat.setTitle("Chat with \(tvUser3.text!)", for: .normal)
+            break
+        default:
+            break
+        }
+        btnChat.titleLabel!.adjustsFontSizeToFitWidth = true
+        fadeIn(btnView: btnChat)
+        fadeIn(btnView: btnSendReminders)
+    }
+    
+    func fadeIn(btnView: BorderedButton, withDuration duration: TimeInterval = 1.5) {
+        btnView.alpha = 0.0
+        UIView.animate(withDuration: duration, animations: {
+            btnView.alpha = 1.0
+        })
     }
     
     func loadAllUserImg(){

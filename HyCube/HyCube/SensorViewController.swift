@@ -9,7 +9,7 @@
 import UIKit
 import PubNub
 
-class SettingsViewController: UIViewController, PNObjectEventListener {
+class SensorViewController: UIViewController, PNObjectEventListener {
 
     @IBOutlet weak var sensorImg: UIImageView!
     
@@ -31,6 +31,11 @@ class SettingsViewController: UIViewController, PNObjectEventListener {
     @IBAction func btnSensePressed(_ sender: BorderedButton) {
         takeCleanPhoto()
     }
+    
+    @IBAction func btnSeePressed(_ sender: BorderedButton) {
+        getCleanPhoto()
+    }
+    
     
     func client(_ client: PubNub, didReceiveMessage message: PNMessageResult) {
         if(cleanPicChannelName == "\(message.data.channel)"){
@@ -69,7 +74,7 @@ class SettingsViewController: UIViewController, PNObjectEventListener {
     }
     
     func getCleanPhoto(){
-        let url_to_request = "http://140.118.7.117/hycube_ws/get_clean_pic.php"
+        let url_to_request = "http://140.118.7.117/hycube_ws/sensor_get_clean_pic.php"
         let url:NSURL = NSURL(string: url_to_request)!
         let session = URLSession.shared
         
@@ -90,8 +95,15 @@ class SettingsViewController: UIViewController, PNObjectEventListener {
                 return
             }
             
-            let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print(dataString!)
+            let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) as! String
+            if("" != dataString && dataString.characters.count >= 10){
+                if(dataString.contains("ImgSuccess")){
+                    let imgString = dataString.components(separatedBy: "ImgSuccess")[1]
+                    let dataDecoded: NSData = NSData(base64Encoded: imgString, options: NSData.Base64DecodingOptions(rawValue: 0))!
+                    let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
+                    self.sensorImg.image = decodedimage
+                }
+            }
         }
         
         task.resume()

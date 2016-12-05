@@ -12,6 +12,7 @@ import FacebookCore
 
 extension LoginViewController: LoginButtonDelegate {
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        getMyFacebookProfilePic()
         print("Did complete login via LoginButton with result \(result)")
     }
     

@@ -16,8 +16,10 @@ struct TaskItem {
 //PassTaskItemBackDelegate
 class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDelegate, UITableViewDataSource, PassTaskItemBackDelegate {
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     var mainChannelName: String = "HyCubeTask3"
-    var deletedChannelName: String = "HyCubeTask-deleted"
+    var deletedChannelName: String = ""
     var taskListItems: [TaskItem] = []
     var deletedTaskItems: [TaskItem] = []
     var allTaskItems: [TaskItem] = []
@@ -32,17 +34,16 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        deletedChannelName = "\(mainChannelName)-deleted"
         showActivityIndicator()
         tableView.dataSource = self
         tableView.delegate = self
         appDelegate.client.addListener(self)
-        appDelegate.client.subscribeToChannels([mainChannelName], withPresence: false)
-//        appDelegate.client.subscribeToChannels(["HyCubeTask-deleted"], withPresence: false)
+        appDelegate.client.subscribeToChannels([mainChannelName, deletedChannelName], withPresence: false)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,7 +63,6 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
             fromAddTaskVC = false
         }
     }
-    
     
     //When user swipes to delete, a message is sent to the "deleted" channel
     //This makes sure that when a new user joins, these messages won't be shown in their todo list
@@ -183,11 +183,10 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
         appDelegate.client.publish(message, toChannel: mainChannelName, withCompletion: nil)
     }
     
-    //Set delegate
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        let addTaskViewController = segue.destination as! AddTaskViewController
-    //        addTaskViewController.delegate = self
-    //    }
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        
+    }
+    
     
     //Spinning indicator when loading request
     func showActivityIndicator() {

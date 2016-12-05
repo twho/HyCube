@@ -15,6 +15,8 @@
 		2759AC2B1DEFE22C001FD890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2759AC291DEFE22C001FD890 /* LaunchScreen.storyboard */; };
 		2759AC361DEFE22C001FD890 /* HyCubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759AC351DEFE22C001FD890 /* HyCubeTests.swift */; };
 		2759AC411DEFE22C001FD890 /* HyCubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759AC401DEFE22C001FD890 /* HyCubeUITests.swift */; };
+		27615C841DF5291B00C6505C /* DropDownListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27615C821DF5291B00C6505C /* DropDownListCell.swift */; };
+		27615C851DF5291B00C6505C /* DropDownListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27615C831DF5291B00C6505C /* DropDownListCell.xib */; };
 		276F014B1DF24D9A00E5AAA7 /* LoginButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F014A1DF24D9A00E5AAA7 /* LoginButtonDelegate.swift */; };
 		276F014F1DF2820A00E5AAA7 /* CornerRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F014E1DF2820A00E5AAA7 /* CornerRadiusView.swift */; };
 		276F01511DF2853200E5AAA7 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F01501DF2853200E5AAA7 /* TaskViewController.swift */; };
@@ -31,7 +33,7 @@
 		27B7894B1DEFF0FA00D337E4 /* imageColorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7894A1DEFF0FA00D337E4 /* imageColorFilter.swift */; };
 		27B7894D1DEFF41900D337E4 /* UIColorByHexRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7894C1DEFF41900D337E4 /* UIColorByHexRGB.swift */; };
 		27DA49CC1DF1C9EB00C0CBB3 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DA49CB1DF1C9EB00C0CBB3 /* PeopleViewController.swift */; };
-		27EF33F21DF3DB5800C12244 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF33F11DF3DB5800C12244 /* SettingsViewController.swift */; };
+		27EF33F21DF3DB5800C12244 /* SensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF33F11DF3DB5800C12244 /* SensorViewController.swift */; };
 		71D8B2517F28ED468998D157 /* Pods_HyCubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B067955002AD0BAA1FF631 /* Pods_HyCubeUITests.framework */; };
 		D005D87219ECFD58E594ABD2 /* Pods_HyCubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48B4A7AC1EE1DE5C014D401 /* Pods_HyCubeTests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		2759AC3C1DEFE22C001FD890 /* HyCubeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HyCubeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2759AC401DEFE22C001FD890 /* HyCubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HyCubeUITests.swift; sourceTree = "<group>"; };
 		2759AC421DEFE22C001FD890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27615C821DF5291B00C6505C /* DropDownListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownListCell.swift; sourceTree = "<group>"; };
+		27615C831DF5291B00C6505C /* DropDownListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownListCell.xib; sourceTree = "<group>"; };
 		276F014A1DF24D9A00E5AAA7 /* LoginButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButtonDelegate.swift; sourceTree = "<group>"; };
 		276F014E1DF2820A00E5AAA7 /* CornerRadiusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusView.swift; sourceTree = "<group>"; };
 		276F01501DF2853200E5AAA7 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
@@ -86,7 +90,7 @@
 		27B7894A1DEFF0FA00D337E4 /* imageColorFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageColorFilter.swift; sourceTree = "<group>"; };
 		27B7894C1DEFF41900D337E4 /* UIColorByHexRGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorByHexRGB.swift; sourceTree = "<group>"; };
 		27DA49CB1DF1C9EB00C0CBB3 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
-		27EF33F11DF3DB5800C12244 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		27EF33F11DF3DB5800C12244 /* SensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorViewController.swift; sourceTree = "<group>"; };
 		42B067955002AD0BAA1FF631 /* Pods_HyCubeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyCubeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC647B3AEE68A14AA0B64AB /* Pods-HyCubeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCubeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyCubeTests/Pods-HyCubeTests.release.xcconfig"; sourceTree = "<group>"; };
 		85C7B522ED49188B40E6FCFF /* Pods-HyCube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCube.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyCube/Pods-HyCube.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,7 +165,7 @@
 				27A79BEF1DF0EC6500E4D3AD /* AddTaskViewController.swift */,
 				27DA49CB1DF1C9EB00C0CBB3 /* PeopleViewController.swift */,
 				276F01501DF2853200E5AAA7 /* TaskViewController.swift */,
-				27EF33F11DF3DB5800C12244 /* SettingsViewController.swift */,
+				27EF33F11DF3DB5800C12244 /* SensorViewController.swift */,
 			);
 			path = HyCube;
 			sourceTree = "<group>";
@@ -205,6 +209,8 @@
 				27A79BF21DF1138200E4D3AD /* PopDateViewController.xib */,
 				27A79BF51DF113BA00E4D3AD /* PopDatePicker.swift */,
 				273ECC9F1DF1513F00447921 /* MessengerViewController.swift */,
+				27615C821DF5291B00C6505C /* DropDownListCell.swift */,
+				27615C831DF5291B00C6505C /* DropDownListCell.xib */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27615C851DF5291B00C6505C /* DropDownListCell.xib in Resources */,
 				2759AC2B1DEFE22C001FD890 /* LaunchScreen.storyboard in Resources */,
 				277CAF261DEFF90A006C21C4 /* Assets.xcassets in Resources */,
 				27A79BF41DF1138200E4D3AD /* PopDateViewController.xib in Resources */,
@@ -534,7 +541,8 @@
 				276F01511DF2853200E5AAA7 /* TaskViewController.swift in Sources */,
 				27A79BF61DF113BA00E4D3AD /* PopDatePicker.swift in Sources */,
 				2759AC1F1DEFE22C001FD890 /* AppDelegate.swift in Sources */,
-				27EF33F21DF3DB5800C12244 /* SettingsViewController.swift in Sources */,
+				27615C841DF5291B00C6505C /* DropDownListCell.swift in Sources */,
+				27EF33F21DF3DB5800C12244 /* SensorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

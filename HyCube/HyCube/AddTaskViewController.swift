@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 protocol PassTaskItemBackDelegate: class {
     func passTaskItemBack(_ taskItem: TaskItem)
@@ -15,27 +16,46 @@ protocol PassTaskItemBackDelegate: class {
 class AddTaskViewController: UIViewController, UITextFieldDelegate {
     
     weak var delegate: PassTaskItemBackDelegate?
-    var popDatePicker: PopDatePicker?
-    var mainChannelName: String = "HyCubeTask3"
     
+    var mainChannelName: String = "HyCubeTask3"
+    let freqDropDown = DropDown()
+    let assignDropDown = DropDown()
+    let sensorDropDown = DropDown()
+    lazy var dropDowns: [DropDown] = {
+        return [
+            self.freqDropDown,
+            self.assignDropDown,
+            self.sensorDropDown
+        ]
+    }()
+
     @IBOutlet weak var edTaskName: UITextField!
-    @IBOutlet weak var edDueDate: UITextField!
+    @IBOutlet weak var edTaskFreq: UITextField!
+    @IBOutlet weak var edTaskAssign: UITextField!
+    @IBOutlet weak var edTaskSensor: UITextField!
     @IBOutlet weak var btnSave: BorderedButton!
     
     let imgSaveClicked = (UIImage(named: "ic_check")?.maskWithColor(color: UIColor.white)!)! as UIImage
     let imgSave = (UIImage(named: "ic_check")?.maskWithColor(color: UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0))!)! as UIImage
+    let freqPickerArray = ["", ""]
+    let assignPickerArray = [""]
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        popDatePicker = PopDatePicker(forTextField: edDueDate)
         btnSave.setImage(imgSaveClicked, for: .highlighted)
         btnSave.setImage(imgSave, for: .normal)
         self.edTaskName.delegate = self
-        self.edDueDate.delegate = self
+        self.edTaskFreq.delegate = self
+        self.edTaskAssign.delegate = self
+        self.edTaskSensor.delegate = self
         self.edTaskName.becomeFirstResponder()
         self.hideKeyboardWhenTappedAround()
+        self.freqDropDown.dataSource = ["Every week", "Every other week", "Every other month"]
+        self.assignDropDown.dataSource = defaults.array(forKey: "myFriendsName") as! [String]
+        self.sensorDropDown.dataSource = ["Kitchen sensor", "Living Room sensor", "Bathroom sensor", "Sink sensor"]
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,7 +64,6 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func btnSavePressed(_ sender: BorderedButton) {
         if(edTaskName.text!.characters.count > 0 && edTaskName.text!.characters.count > 0) {
-//            uploadTask(taskName: edTaskName.text!, dueDate: edDueDate.text!, taskImg: imgSave)
             let message : [String : AnyObject] = ["uuid" : UUID().uuidString as AnyObject, "taskItem" : edTaskName.text! as AnyObject]
             appDelegate.client.publish(message, toChannel: mainChannelName, withCompletion: nil)
             self.performSegue(withIdentifier: "AddToTaskIdentifier", sender: self)
@@ -52,59 +71,68 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
             showAlert(error: "Cannot sumbit blank task")
         }
     }
-    
-    
+   
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if (textField == self.edDueDate) {
-            edDueDate.resignFirstResponder()
-            view.endEditing(true)
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .none
-            let initDate : Date? = formatter.date(from: "Jan 09, 1980")
-            
-            let dataChangedCallback : PopDatePicker.PopDatePickerCallback = { (newDate : Date, forTextField : UITextField) -> () in
-                forTextField.text = formatter.string(from: newDate)
-            }
-            popDatePicker!.pick(self, initDate: initDate, dataChanged: dataChangedCallback)
+        if (textField == self.edTaskFreq) {
+//            edTaskFreq.resignFirstResponder()
+            customizeDropDown(freqDropDown)
+            freqDropDown.show()
             return false
-        }
-        else {
+        } else if (textField == self.edTaskAssign) {
+            customizeDropDown(assignDropDown)
+            assignDropDown.show()
+            return false
+        } else if (textField == self.edTaskSensor) {
+            customizeDropDown(sensorDropDown)
+            sensorDropDown.show()
+            return false
+        } else {
             return true
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == self.edTaskName {
-            self.edDueDate.becomeFirstResponder()
-        } else if textField == self.edDueDate{
-            self.edTaskName.becomeFirstResponder()
+            self.edTaskFreq.becomeFirstResponder()
+        } else if textField == self.edTaskFreq{
+            self.edTaskAssign.becomeFirstResponder()
+        } else {
+            self.edTaskSensor.becomeFirstResponder()
         }
         return true
     }
     
-    func uploadTask(taskName: String, dueDate: String, taskImg: UIImage){
-        var request = URLRequest(url: URL(string: "http://140.118.7.117/hycube_ws/post_tasks.php")!)
-        request.httpMethod = "POST"
-        let postString = "task=\(taskName)&due_date=\(dueDate)&if_cleaned=0"
-        request.httpBody = postString.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                // check for fundamental networking error
-                print("error=\(error)")
-                return
-            }
+    func customizeDropDown(_ sender: AnyObject) {
+        view.endEditing(true)
+        let appearance = DropDown.appearance()
+        appearance.cellHeight = 60
+        appearance.backgroundColor = UIColor(white: 1, alpha: 1)
+        appearance.selectionBackgroundColor = UIColor(red: 0.6494, green: 0.8155, blue: 1.0, alpha: 0.2)
+        appearance.cornerRadius = 10
+        appearance.shadowColor = UIColor(white: 0.6, alpha: 1)
+        appearance.shadowOpacity = 0.9
+        appearance.shadowRadius = 25
+        appearance.animationduration = 0.25
+        appearance.textColor = edTaskSensor.textColor!
+        appearance.direction = .any
+        
+        dropDowns.forEach {
+            $0.cellNib = UINib(nibName: "DropDownListCell", bundle: nil)
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+            $0.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+                guard let cell = cell as? DropDownListCell else { return }
             }
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString!)")
-            //need to be checked
-            print("\(responseString!)" == "InsertSuccess")
         }
-        task.resume()
+        
+        freqDropDown.selectionAction = { [unowned self] (index, item) in
+            self.edTaskFreq.text = self.freqDropDown.dataSource[index]
+        }
+        assignDropDown.selectionAction = { [unowned self] (index, item) in
+            self.edTaskAssign.text = self.assignDropDown.dataSource[index]
+        }
+        sensorDropDown.selectionAction = { [unowned self] (index, item) in
+            self.edTaskSensor.text = self.sensorDropDown.dataSource[index]
+        }
     }
     
     func showAlert(error: String) {
