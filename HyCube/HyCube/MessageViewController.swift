@@ -49,7 +49,6 @@ class MessageViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func btnStartPressed(_ sender: BorderedButton) {
@@ -77,14 +76,11 @@ class MessageViewController: UIViewController {
         var count = 0
         for userId in allUserIds {
             time += 1
-//            if nil == image {
-                print(allUserNames[count])
-                let facebookProfileUrl = URL(string: "http://graph.facebook.com/\(userId)/picture?type=large")
-                if let data = NSData(contentsOf: facebookProfileUrl!) {
-                    self.defaults.setValue(data as Data, forKey: allUserNames[count])
-                    self.defaults.synchronize()
-                }
-//            }
+            let facebookProfileUrl = URL(string: "http://graph.facebook.com/\(userId)/picture?type=large")
+            if let data = NSData(contentsOf: facebookProfileUrl!) {
+                self.defaults.setValue(data as Data, forKey: allUserNames[count])
+                self.defaults.synchronize()
+            }
             count = count + 1
         }
     }

@@ -1,5 +1,5 @@
 //
-//  SettingsTableViewCell.swift
+//  TaskTableViewCell.swift
 //  HyCube
 //
 //  Created by Michael Ho on 12/5/16.
@@ -8,17 +8,15 @@
 
 import UIKit
 
-class SettingsTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var ivSensor: UIImageView!
-    @IBOutlet weak var tvSensor: UILabel!
-    @IBOutlet weak var tvStatus: UILabel!
-    @IBOutlet weak var ivConnect: UIImageView!
-    
+class TaskTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var ivAssign: UIImageView!
+    @IBOutlet weak var tvTask: UILabel!
+    @IBOutlet weak var tvFreq: UILabel!
+    @IBOutlet weak var ivStatus: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

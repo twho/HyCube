@@ -114,8 +114,7 @@ class PeopleViewController: UIViewController {
         var count = 0
         for userId in allUserIds {
             let facebookProfileUrl = URL(string: "http://graph.facebook.com/\(userId)/picture?type=large")
-            if(userId != defaults.string(forKey: MyProfile.myId) && count < 3){
-                print("\(count)")
+            if(userId != defaults.string(forKey: MyProfile.myId) && count < 4){
                 if let data = NSData(contentsOf: facebookProfileUrl!) {
                     self.userIvs[imgCount].image = UIImage(data: data as Data)
                     self.userTvs[imgCount].text = allUserNames[count]

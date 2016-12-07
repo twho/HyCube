@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C6ECCE639E74896E214B490 /* Pods_HyCube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048EB440285B20E5CCE0261F /* Pods_HyCube.framework */; };
+		2725609A1DF6156500C2F73E /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272560991DF6156500C2F73E /* TaskTableViewCell.swift */; };
 		273ECCA01DF1513F00447921 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273ECC9F1DF1513F00447921 /* MessengerViewController.swift */; };
 		2759AC1F1DEFE22C001FD890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759AC1E1DEFE22C001FD890 /* AppDelegate.swift */; };
 		2759AC231DEFE22C001FD890 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2759AC221DEFE22C001FD890 /* MessageViewController.swift */; };
@@ -20,8 +21,9 @@
 		276F014B1DF24D9A00E5AAA7 /* LoginButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F014A1DF24D9A00E5AAA7 /* LoginButtonDelegate.swift */; };
 		276F014F1DF2820A00E5AAA7 /* CornerRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F014E1DF2820A00E5AAA7 /* CornerRadiusView.swift */; };
 		276F01511DF2853200E5AAA7 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F01501DF2853200E5AAA7 /* TaskViewController.swift */; };
+		277472671DF7CFC500E10E6D /* ResetSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277472661DF7CFC500E10E6D /* ResetSensorViewController.swift */; };
+		277472691DF7D7E700E10E6D /* DeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277472681DF7D7E700E10E6D /* DeviceViewController.swift */; };
 		277CAF261DEFF90A006C21C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277CAF251DEFF90A006C21C4 /* Assets.xcassets */; };
-		27A79BEE1DF0E7A800E4D3AD /* TaskNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A79BED1DF0E7A800E4D3AD /* TaskNaviViewController.swift */; };
 		27A79BF01DF0EC6500E4D3AD /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A79BEF1DF0EC6500E4D3AD /* AddTaskViewController.swift */; };
 		27A79BF31DF1138200E4D3AD /* PopDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A79BF11DF1138200E4D3AD /* PopDateViewController.swift */; };
 		27A79BF41DF1138200E4D3AD /* PopDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A79BF21DF1138200E4D3AD /* PopDateViewController.xib */; };
@@ -35,6 +37,7 @@
 		27C8C6A51DF5F7490020F1C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C6A41DF5F7490020F1C0 /* SettingsViewController.swift */; };
 		27C8C6A71DF5F8B70020F1C0 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8C6A61DF5F8B70020F1C0 /* SettingsTableViewCell.swift */; };
 		27DA49CC1DF1C9EB00C0CBB3 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DA49CB1DF1C9EB00C0CBB3 /* PeopleViewController.swift */; };
+		27EC608B1DF634410099F715 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EC608A1DF634410099F715 /* EditTaskViewController.swift */; };
 		27EF33F21DF3DB5800C12244 /* SensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF33F11DF3DB5800C12244 /* SensorViewController.swift */; };
 		71D8B2517F28ED468998D157 /* Pods_HyCubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B067955002AD0BAA1FF631 /* Pods_HyCubeUITests.framework */; };
 		D005D87219ECFD58E594ABD2 /* Pods_HyCubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48B4A7AC1EE1DE5C014D401 /* Pods_HyCubeTests.framework */; };
@@ -61,6 +64,7 @@
 		048EB440285B20E5CCE0261F /* Pods_HyCube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyCube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20DE687B0528878FB315C9FC /* Pods-HyCube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HyCube/Pods-HyCube.debug.xcconfig"; sourceTree = "<group>"; };
 		21D9859AAFCF164378B60F36 /* Pods-HyCubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCubeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HyCubeTests/Pods-HyCubeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		272560991DF6156500C2F73E /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		273ECC9F1DF1513F00447921 /* MessengerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerViewController.swift; sourceTree = "<group>"; };
 		2759AC1B1DEFE22C001FD890 /* HyCube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyCube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2759AC1E1DEFE22C001FD890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,8 +83,9 @@
 		276F014A1DF24D9A00E5AAA7 /* LoginButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButtonDelegate.swift; sourceTree = "<group>"; };
 		276F014E1DF2820A00E5AAA7 /* CornerRadiusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusView.swift; sourceTree = "<group>"; };
 		276F01501DF2853200E5AAA7 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		277472661DF7CFC500E10E6D /* ResetSensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetSensorViewController.swift; sourceTree = "<group>"; };
+		277472681DF7D7E700E10E6D /* DeviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceViewController.swift; sourceTree = "<group>"; };
 		277CAF251DEFF90A006C21C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		27A79BED1DF0E7A800E4D3AD /* TaskNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskNaviViewController.swift; sourceTree = "<group>"; };
 		27A79BEF1DF0EC6500E4D3AD /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		27A79BF11DF1138200E4D3AD /* PopDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopDateViewController.swift; sourceTree = "<group>"; };
 		27A79BF21DF1138200E4D3AD /* PopDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopDateViewController.xib; sourceTree = "<group>"; };
@@ -94,6 +99,7 @@
 		27C8C6A41DF5F7490020F1C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		27C8C6A61DF5F8B70020F1C0 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		27DA49CB1DF1C9EB00C0CBB3 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		27EC608A1DF634410099F715 /* EditTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 		27EF33F11DF3DB5800C12244 /* SensorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorViewController.swift; sourceTree = "<group>"; };
 		42B067955002AD0BAA1FF631 /* Pods_HyCubeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyCubeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC647B3AEE68A14AA0B64AB /* Pods-HyCubeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyCubeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyCubeTests/Pods-HyCubeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,21 +162,14 @@
 		2759AC1D1DEFE22C001FD890 /* HyCube */ = {
 			isa = PBXGroup;
 			children = (
+				27EC60891DF628820099F715 /* Views */,
 				27B789451DEFEB6700D337E4 /* Objects */,
 				27B789441DEFEB4000D337E4 /* Extensions */,
 				2759AC1E1DEFE22C001FD890 /* AppDelegate.swift */,
-				2759AC221DEFE22C001FD890 /* MessageViewController.swift */,
 				2759AC241DEFE22C001FD890 /* Main.storyboard */,
 				277CAF251DEFF90A006C21C4 /* Assets.xcassets */,
 				2759AC291DEFE22C001FD890 /* LaunchScreen.storyboard */,
 				2759AC2C1DEFE22C001FD890 /* Info.plist */,
-				27B789421DEFE37500D337E4 /* LoginViewController.swift */,
-				27A79BED1DF0E7A800E4D3AD /* TaskNaviViewController.swift */,
-				27A79BEF1DF0EC6500E4D3AD /* AddTaskViewController.swift */,
-				27DA49CB1DF1C9EB00C0CBB3 /* PeopleViewController.swift */,
-				276F01501DF2853200E5AAA7 /* TaskViewController.swift */,
-				27EF33F11DF3DB5800C12244 /* SensorViewController.swift */,
-				27C8C6A41DF5F7490020F1C0 /* SettingsViewController.swift */,
 			);
 			path = HyCube;
 			sourceTree = "<group>";
@@ -217,8 +216,26 @@
 				27615C821DF5291B00C6505C /* DropDownListCell.swift */,
 				27615C831DF5291B00C6505C /* DropDownListCell.xib */,
 				27C8C6A61DF5F8B70020F1C0 /* SettingsTableViewCell.swift */,
+				272560991DF6156500C2F73E /* TaskTableViewCell.swift */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		27EC60891DF628820099F715 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2759AC221DEFE22C001FD890 /* MessageViewController.swift */,
+				27B789421DEFE37500D337E4 /* LoginViewController.swift */,
+				27A79BEF1DF0EC6500E4D3AD /* AddTaskViewController.swift */,
+				27DA49CB1DF1C9EB00C0CBB3 /* PeopleViewController.swift */,
+				276F01501DF2853200E5AAA7 /* TaskViewController.swift */,
+				27EF33F11DF3DB5800C12244 /* SensorViewController.swift */,
+				27C8C6A41DF5F7490020F1C0 /* SettingsViewController.swift */,
+				27EC608A1DF634410099F715 /* EditTaskViewController.swift */,
+				277472661DF7CFC500E10E6D /* ResetSensorViewController.swift */,
+				277472681DF7D7E700E10E6D /* DeviceViewController.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		4596E1542C403F7873859E4F /* Frameworks */ = {
@@ -321,7 +338,7 @@
 				TargetAttributes = {
 					2759AC1A1DEFE22C001FD890 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = Y8SQE6629N;
+						DevelopmentTeam = 588Y89GTAL;
 						ProvisioningStyle = Automatic;
 					};
 					2759AC301DEFE22C001FD890 = {
@@ -532,15 +549,16 @@
 			files = (
 				27B789471DEFEB8C00D337E4 /* BorderedButton.swift in Sources */,
 				27DA49CC1DF1C9EB00C0CBB3 /* PeopleViewController.swift in Sources */,
+				2725609A1DF6156500C2F73E /* TaskTableViewCell.swift in Sources */,
 				27A79BF81DF1178500E4D3AD /* HideKeyboardByTapViewController.swift in Sources */,
 				27B789491DEFEF6800D337E4 /* ColoredUIImage.swift in Sources */,
 				27B7894B1DEFF0FA00D337E4 /* imageColorFilter.swift in Sources */,
 				27B789431DEFE37500D337E4 /* LoginViewController.swift in Sources */,
 				2759AC231DEFE22C001FD890 /* MessageViewController.swift in Sources */,
-				27A79BEE1DF0E7A800E4D3AD /* TaskNaviViewController.swift in Sources */,
 				27A79BF31DF1138200E4D3AD /* PopDateViewController.swift in Sources */,
 				27B7894D1DEFF41900D337E4 /* UIColorByHexRGB.swift in Sources */,
 				276F014B1DF24D9A00E5AAA7 /* LoginButtonDelegate.swift in Sources */,
+				27EC608B1DF634410099F715 /* EditTaskViewController.swift in Sources */,
 				27C8C6A71DF5F8B70020F1C0 /* SettingsTableViewCell.swift in Sources */,
 				273ECCA01DF1513F00447921 /* MessengerViewController.swift in Sources */,
 				27A79BF01DF0EC6500E4D3AD /* AddTaskViewController.swift in Sources */,
@@ -549,7 +567,9 @@
 				27C8C6A51DF5F7490020F1C0 /* SettingsViewController.swift in Sources */,
 				27A79BF61DF113BA00E4D3AD /* PopDatePicker.swift in Sources */,
 				2759AC1F1DEFE22C001FD890 /* AppDelegate.swift in Sources */,
+				277472691DF7D7E700E10E6D /* DeviceViewController.swift in Sources */,
 				27615C841DF5291B00C6505C /* DropDownListCell.swift in Sources */,
+				277472671DF7CFC500E10E6D /* ResetSensorViewController.swift in Sources */,
 				27EF33F21DF3DB5800C12244 /* SensorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,8 +723,9 @@
 			baseConfigurationReference = 20DE687B0528878FB315C9FC /* Pods-HyCube.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y8SQE6629N;
+				DEVELOPMENT_TEAM = 588Y89GTAL;
 				INFOPLIST_FILE = HyCube/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hycube.com.HyCube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -717,8 +738,9 @@
 			baseConfigurationReference = 85C7B522ED49188B40E6FCFF /* Pods-HyCube.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y8SQE6629N;
+				DEVELOPMENT_TEAM = 588Y89GTAL;
 				INFOPLIST_FILE = HyCube/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hycube.com.HyCube;
 				PRODUCT_NAME = "$(TARGET_NAME)";

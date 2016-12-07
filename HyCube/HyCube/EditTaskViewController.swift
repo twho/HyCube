@@ -1,17 +1,31 @@
 //
-//  AddTaskViewController.swift
+//  EditTaskViewController.swift
 //  HyCube
 //
-//  Created by Michael Ho on 12/1/16.
+//  Created by Michael Ho on 12/5/16.
 //  Copyright © 2016 hycube.com. All rights reserved.
 //
 
 import UIKit
 import DropDown
+import PubNub
 
-class AddTaskViewController: UIViewController, UITextFieldDelegate {
-    
+class EditTaskViewController: UIViewController, UITextFieldDelegate {
+
     var mainChannelName: String = "HyCubeTask4"
+    var deletedChannelName: String = ""
+    var cellTaskItem: TaskItem = TaskItem(uuid: "", taskName: "", taskFreq: "", taskAssign: "", taskSensor: "")
+    
+    @IBOutlet weak var edTaskName: UITextField!
+    @IBOutlet weak var edTaskFreq: UITextField!
+    @IBOutlet weak var edTaskAssign: UITextField!
+    @IBOutlet weak var edTaskSensor: UITextField!
+    @IBOutlet weak var btnSave: BorderedButton!
+    
+    let defaults = UserDefaults.standard
+    let imgSaveClicked = (UIImage(named: "ic_check")?.maskWithColor(color: UIColor.white)!)! as UIImage
+    let imgSave = (UIImage(named: "ic_check")?.maskWithColor(color: UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0))!)! as UIImage
+    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     let freqDropDown = DropDown()
     let assignDropDown = DropDown()
     let sensorDropDown = DropDown()
@@ -23,18 +37,6 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
         ]
     }()
 
-    @IBOutlet weak var edTaskName: UITextField!
-    @IBOutlet weak var edTaskFreq: UITextField!
-    @IBOutlet weak var edTaskAssign: UITextField!
-    @IBOutlet weak var edTaskSensor: UITextField!
-    @IBOutlet weak var btnSave: BorderedButton!
-    
-    let imgSaveClicked = (UIImage(named: "ic_check")?.maskWithColor(color: UIColor.white)!)! as UIImage
-    let imgSave = (UIImage(named: "ic_check")?.maskWithColor(color: UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0))!)! as UIImage
-    let freqPickerArray = ["", ""]
-    let assignPickerArray = [""]
-    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,30 +47,36 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
         self.edTaskFreq.delegate = self
         self.edTaskAssign.delegate = self
         self.edTaskSensor.delegate = self
-        self.edTaskName.becomeFirstResponder()
+        self.edTaskName.text = cellTaskItem.taskName
+        self.edTaskFreq.text = cellTaskItem.taskFreq
+        self.edTaskAssign.text = cellTaskItem.taskAssign
+        self.edTaskSensor.text = cellTaskItem.taskSensor
         self.hideKeyboardWhenTappedAround()
+        deletedChannelName = "\(mainChannelName)-deleted"
         self.freqDropDown.dataSource = ["Every week", "Every other week", "Every other month"]
         self.assignDropDown.dataSource = defaults.array(forKey: "myFriendsName") as! [String]
         self.sensorDropDown.dataSource = ["Kitchen sensor", "Living Room sensor", "Bathroom sensor", "Sink sensor"]
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func btnSavePressed(_ sender: BorderedButton) {
         if(edTaskName.text!.characters.count > 0 && edTaskName.text!.characters.count > 0) {
+            let oldMessage : [String : AnyObject] = ["uuid" : cellTaskItem.uuid as AnyObject, "taskName" : cellTaskItem.taskName as AnyObject, "taskFreq" : cellTaskItem.taskFreq as AnyObject, "taskAssign" : cellTaskItem.taskAssign as AnyObject, "taskSensor" : cellTaskItem.taskSensor as AnyObject]
             let message : [String : AnyObject] = ["uuid" : UUID().uuidString as AnyObject, "taskName" : edTaskName.text! as AnyObject, "taskFreq" : edTaskFreq.text! as AnyObject, "taskAssign" : edTaskAssign.text! as AnyObject, "taskSensor" : edTaskSensor.text! as AnyObject]
+            appDelegate.client.publish(oldMessage, toChannel: deletedChannelName, withCompletion: nil)
             appDelegate.client.publish(message, toChannel: mainChannelName, withCompletion: nil)
-            self.performSegue(withIdentifier: "AddToTaskIdentifier", sender: self)
+            self.performSegue(withIdentifier: "EditToTaskIdentifier", sender: self)
         } else {
             showAlert(error: "Cannot sumbit blank task")
         }
     }
-   
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if (textField == self.edTaskFreq) {
-//            edTaskFreq.resignFirstResponder()
             customizeDropDown(freqDropDown)
             freqDropDown.show()
             return false
@@ -112,12 +120,10 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
         
         dropDowns.forEach {
             $0.cellNib = UINib(nibName: "DropDownListCell", bundle: nil)
-            
             $0.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
                 guard let cell = cell as? DropDownListCell else { return }
             }
         }
-    
         freqDropDown.selectionAction = { [unowned self] (index, item) in
             self.edTaskFreq.text = self.freqDropDown.dataSource[index]
         }
