@@ -48,7 +48,8 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
         tableView.dataSource = self
         tableView.delegate = self
         appDelegate.client.addListener(self)
-        appDelegate.client.subscribeToChannels([mainChannelName, deletedChannelName], withPresence: false)
+        appDelegate.client.subscribeToChannels([mainChannelName], withPresence: false)
+        appDelegate.client.subscribeToChannels([deletedChannelName], withPresence: false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,7 +70,7 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
     //This makes sure that when a new user joins, these messages won't be shown in their todo list
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let message : [String : AnyObject] = ["uuid" : taskListItems[indexPath.row].uuid as AnyObject, "taskName" : taskListItems[indexPath.row].taskName as AnyObject, "taskFreq" : taskListItems[indexPath.row].taskFreq as AnyObject, "taskAssign" : taskListItems[indexPath.row].taskAssign as AnyObject, "taskSensor" : taskListItems[indexPath.row].taskSensor as AnyObject, "index" : indexPath.row as AnyObject]
+            let message : [String : AnyObject] = ["uuid" : taskListItems[indexPath.row].uuid as AnyObject, "taskName" : taskListItems[indexPath.row].taskName as AnyObject, "taskFreq" : taskListItems[indexPath.row].taskFreq as AnyObject, "taskAssign" : taskListItems[indexPath.row].taskAssign as AnyObject, "taskSensor" : taskListItems[indexPath.row].taskSensor as AnyObject, "index": indexPath.row as AnyObject]
             appDelegate.client.publish(message, toChannel: self.deletedChannelName, withCompletion: { (status) in
                 self.showActivityIndicator()
                 if status.isError == true {
@@ -127,6 +128,7 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
             tableView.reloadData()
         } else if(deletedChannelName == "\(message.data.channel)") {
             activityIndicator.stopAnimating()
+            print((message.data.message as! [String:AnyObject]))
             taskListItems.remove(at: (message.data.message as! [String:AnyObject])["index"] as! Int)
             let indexPath = IndexPath.init(row: (message.data.message as! [String:AnyObject])["index"] as! Int, section: 0)
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)

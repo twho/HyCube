@@ -35,18 +35,21 @@ class DeviceViewController: UIViewController {
     
     @IBAction func btnStandardPressed(_ sender: BorderedButton) {
         self.tvMode.text = "Mode: Standard"
+        changeMode(mode: "yellow")
     }
     
     @IBAction func btnPartyPressed(_ sender: BorderedButton) {
         self.tvMode.text = "Mode: Party"
+        changeMode(mode: "party")
     }
     
     @IBAction func btnRainbowPressed(_ sender: BorderedButton) {
         self.tvMode.text = "Mode: Rainbow"
+        changeMode(mode: "rainbow")
     }
     
-    func changeMode(){
-        let url_to_request = "http://192.168.2.2/mailbox/takePic"
+    func changeMode(mode: String){
+        let url_to_request = "http://linino.local/mailbox/\(mode)"
         let url:NSURL = NSURL(string: url_to_request)!
         let session = URLSession.shared
         
@@ -70,7 +73,6 @@ class DeviceViewController: UIViewController {
             let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             print(dataString!)
         }
-        
         task.resume()
     }
 }
