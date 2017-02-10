@@ -57,8 +57,6 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //Check if the segue is coming from the add task view controller with flag
-        //If it is, don't retrieve history from PubNub
         if !fromAddTaskVC {
             updateTableView(displayMode: mode)
         } else {
@@ -66,8 +64,6 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
         }
     }
     
-    //When user swipes to delete, a message is sent to the "deleted" channel
-    //This makes sure that when a new user joins, these messages won't be shown in their todo list
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let message : [String : AnyObject] = ["uuid" : taskListItems[indexPath.row].uuid as AnyObject, "taskName" : taskListItems[indexPath.row].taskName as AnyObject, "taskFreq" : taskListItems[indexPath.row].taskFreq as AnyObject, "taskAssign" : taskListItems[indexPath.row].taskAssign as AnyObject, "taskSensor" : taskListItems[indexPath.row].taskSensor as AnyObject, "index": indexPath.row as AnyObject]
@@ -117,8 +113,6 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
         return userImage!
     }
     
-    //When a message is received, it is added to the tableview if it's not from the "deleted" channel
-    //Otherwise, it's removed from the table
     func client(_ client: PubNub, didReceiveMessage message: PNMessageResult) {
         print("\(message.data.message!) at \(message.data.channel)")
         if(mainChannelName == "\(message.data.channel)" && !uuids.contains((message.data.message as! [String:AnyObject])["uuid"] as! String)){
@@ -135,8 +129,7 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
         }
     }
     
-    //Page history of specified channel using semaphore and return array with history task items
-    //mytask:mode = 0, alltask:mode = 1
+    // load history tasks from PubNub
     func pageHistory(_ channelName: String, mode: Int) -> [TaskItem] {
         
         var uuidArray: [TaskItem] = []
@@ -151,7 +144,7 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
             for message in (result?.data.messages)! {
                 if let resultMessage = (message as! [String:AnyObject])["message"] {
                     if(mode == 0) {
-                        if(myName == resultMessage["taskAssign"] as! String){
+                        if(myName == resultMessage["taskAssign"] as? String){
                             uuidArray.append(TaskItem(uuid: resultMessage["uuid"] as! String, taskName: resultMessage["taskName"] as! String, taskFreq: resultMessage["taskFreq"] as! String, taskAssign: resultMessage["taskAssign"] as! String, taskSensor: resultMessage["taskSensor"] as! String))
                         }
                     } else {
@@ -178,7 +171,7 @@ class TaskViewController: UIViewController, PNObjectEventListener, UITableViewDe
                 for message in (result?.data.messages)! {
                     if let resultMessage = (message as! [String:AnyObject])["message"] {
                         if(mode == 0) {
-                            if(myName == resultMessage["taskAssign"] as! String){
+                            if(myName == resultMessage["taskAssign"] as? String){
                                 uuidArray.append(TaskItem(uuid: resultMessage["uuid"] as! String, taskName: resultMessage["taskName"] as! String, taskFreq: resultMessage["taskFreq"] as! String, taskAssign: resultMessage["taskAssign"] as! String, taskSensor: resultMessage["taskSensor"] as! String))
                             }
                         } else {

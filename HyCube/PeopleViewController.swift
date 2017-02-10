@@ -23,6 +23,7 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var btnSendReminders: BorderedButton!
     
     let defaults = UserDefaults.standard
+    
     let imgChatClicked = (UIImage(named: "ic_chat")?.maskWithColor(color: UIColor.white)!)! as UIImage
     let imgRemindersClicked = (UIImage(named: "ic_reminder")?.maskWithColor(color: UIColor.white)!)! as UIImage
     
@@ -65,7 +66,6 @@ class PeopleViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func iv1Tapped(){

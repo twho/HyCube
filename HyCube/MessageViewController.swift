@@ -13,18 +13,17 @@ import NMessenger
 import AsyncDisplayKit
 import PubNub
 
+struct MyProfile {
+    static let myId = "myId"
+    static let myName = "myName"
+    static let myEmail = "myEmail"
+    static let myPic = "myPic"
+    static let myFriendsName = "myFriendsName"
+    static let myFriendsId = "myFriendsId"
+}
+
 class MessageViewController: UIViewController {
     @IBOutlet weak var btnStartChatting: BorderedButton!
-    
-    struct MyProfile {
-        static let myId = "myId"
-        static let myName = "myName"
-        static let myEmail = "myEmail"
-        static let myPic = "myPic"
-        static let myFriendsName = "myFriendsName"
-        static let myFriendsId = "myFriendsId"
-    }
-    
     @IBOutlet weak var progressSpinner: UIActivityIndicatorView!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var progressText: UILabel!

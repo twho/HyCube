@@ -121,7 +121,7 @@ class EditTaskViewController: UIViewController, UITextFieldDelegate {
         dropDowns.forEach {
             $0.cellNib = UINib(nibName: "DropDownListCell", bundle: nil)
             $0.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
-                guard let cell = cell as? DropDownListCell else { return }
+                guard cell is DropDownListCell else { return }
             }
         }
         freqDropDown.selectionAction = { [unowned self] (index, item) in

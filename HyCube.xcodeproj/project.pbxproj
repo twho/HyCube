@@ -162,6 +162,7 @@
 		2759AC1D1DEFE22C001FD890 /* HyCube */ = {
 			isa = PBXGroup;
 			children = (
+				2761C6A31E4E4139004A30FB /* CustomViewCells */,
 				27EC60891DF628820099F715 /* Views */,
 				27B789451DEFEB6700D337E4 /* Objects */,
 				27B789441DEFEB4000D337E4 /* Extensions */,
@@ -192,9 +193,21 @@
 			path = HyCubeUITests;
 			sourceTree = "<group>";
 		};
+		2761C6A31E4E4139004A30FB /* CustomViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				27615C821DF5291B00C6505C /* DropDownListCell.swift */,
+				27615C831DF5291B00C6505C /* DropDownListCell.xib */,
+				27C8C6A61DF5F8B70020F1C0 /* SettingsTableViewCell.swift */,
+				272560991DF6156500C2F73E /* TaskTableViewCell.swift */,
+			);
+			name = CustomViewCells;
+			sourceTree = "<group>";
+		};
 		27B789441DEFEB4000D337E4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				27B789461DEFEB8C00D337E4 /* BorderedButton.swift */,
 				27B789481DEFEF6800D337E4 /* ColoredUIImage.swift */,
 				27B7894A1DEFF0FA00D337E4 /* imageColorFilter.swift */,
 				27B7894C1DEFF41900D337E4 /* UIColorByHexRGB.swift */,
@@ -208,15 +221,10 @@
 		27B789451DEFEB6700D337E4 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
-				27B789461DEFEB8C00D337E4 /* BorderedButton.swift */,
 				27A79BF11DF1138200E4D3AD /* PopDateViewController.swift */,
 				27A79BF21DF1138200E4D3AD /* PopDateViewController.xib */,
 				27A79BF51DF113BA00E4D3AD /* PopDatePicker.swift */,
 				273ECC9F1DF1513F00447921 /* MessengerViewController.swift */,
-				27615C821DF5291B00C6505C /* DropDownListCell.swift */,
-				27615C831DF5291B00C6505C /* DropDownListCell.xib */,
-				27C8C6A61DF5F8B70020F1C0 /* SettingsTableViewCell.swift */,
-				272560991DF6156500C2F73E /* TaskTableViewCell.swift */,
 			);
 			name = Objects;
 			sourceTree = "<group>";

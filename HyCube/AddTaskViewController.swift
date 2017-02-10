@@ -68,7 +68,6 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if (textField == self.edTaskFreq) {
-//            edTaskFreq.resignFirstResponder()
             customizeDropDown(freqDropDown)
             freqDropDown.show()
             return false
@@ -114,7 +113,7 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
             $0.cellNib = UINib(nibName: "DropDownListCell", bundle: nil)
             
             $0.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
-                guard let cell = cell as? DropDownListCell else { return }
+                guard cell is DropDownListCell else { return }
             }
         }
     
